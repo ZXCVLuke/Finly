@@ -1,0 +1,26 @@
+{
+  "name": "finly-build",
+  "version": "0.1.0",
+  "description": "Finly single page site build",
+  "author": "Luke Powell <luke@zxcv.net.au>",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-clean": "^0.3.2",
+    "gulp-coffee": "latest",
+    "gulp-concat": "latest",
+    "gulp-connect": "latest",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.0",
+    "gulp-strip-comments": "^2.4.3",
+    "gulp-uglify": "latest",
+    "gulp-util": "latest",
+    "gulp-watch": "^4.3.11"
+  }
+}
