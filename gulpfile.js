@@ -9,15 +9,16 @@ var sourcemaps = require('gulp-sourcemaps');
 var cssnano = require('gulp-cssnano');
 var watch = require('gulp-watch');
 var rename = require('gulp-rename');
-
+var browserSync = require('browser-sync').create();
 
 
 gulp.task('sass', function() {
-    gulp.src('./css', { read: false })
-      .pipe(clean())
-    gulp.src('./sass/*.scss')
+    return gulp.src('./sass/*.scss')
       .pipe(sass())
       .pipe(gulp.dest('./css'))
+      .pipe(browserSync.reload({
+        stream: true
+      }))
 });
 
 gulp.task('cssmin', function(){
@@ -30,7 +31,15 @@ gulp.task('cssmin', function(){
       .pipe(gulp.dest('./css/'))
 });
 
-gulp.task('watch', function(){
+gulp.task('browserSync', function() {
+  browserSync.init({
+    server: {
+      baseDir: ''
+    },
+  })
+})
+
+gulp.task('watch', ['browserSync', 'sass'], function(){
     gulp.watch('./sass/**/*.scss', ['sass']);
-    gulp.watch('./css/*.css', ['cssmin']);
+    gulp.watch('index.html', browserSync.reload);
 });

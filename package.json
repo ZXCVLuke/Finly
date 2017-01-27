@@ -8,6 +8,7 @@
     "url": ""
   },
   "devDependencies": {
+    "browser-sync": "^2.18.6",
     "gulp": "latest",
     "gulp-clean": "^0.3.2",
     "gulp-coffee": "latest",
